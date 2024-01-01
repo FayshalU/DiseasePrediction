@@ -31,7 +31,7 @@ class DiseasePrediction:
         # Load Test Data
         self.test_features, self.test_labels, self.test_df = self._load_test_dataset()
         # Feature Correlation in Training Data
-        self._feature_correlation(data_frame=self.train_df, show_fig=False)
+        self._feature_correlation(model_name=model_name, data_frame=self.train_df, show_fig=False)
         # Model Definition
         self.model_name = model_name
         # Model Save Path
@@ -74,7 +74,7 @@ class DiseasePrediction:
         return test_features, test_labels, df_test
 
     # Features Correlation
-    def _feature_correlation(self, data_frame=None, show_fig=False):
+    def _feature_correlation(self, model_name, data_frame=None, show_fig=False):
         # Get Feature Correlation
         corr = data_frame.corr(numeric_only=True)
         sn.heatmap(corr, square=True, annot=False, cmap="YlGnBu")
@@ -82,7 +82,7 @@ class DiseasePrediction:
         plt.tight_layout()
         if show_fig:
             plt.show()
-        # plt.savefig('feature_correlation_random_forest.png')
+        plt.savefig(str("feature/correlation_" + model_name + ".png"))
 
     # Dataset Train Validation Split
     def _train_val_split(self):
