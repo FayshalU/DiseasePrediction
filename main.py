@@ -161,7 +161,7 @@ class DiseasePrediction:
 
 if __name__ == "__main__":
     # Model Currently Training
-    current_model_name = 'gradient_boost'
+    current_model_name = 'mnb'
     # Instantiate the Class
     dp = DiseasePrediction(model_name=current_model_name)
     # Train the Model
