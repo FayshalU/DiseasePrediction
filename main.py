@@ -161,7 +161,7 @@ class DiseasePrediction:
 
 if __name__ == "__main__":
     # Model Currently Training
-    current_model_name = 'mnb'
+    current_model_name = 'decision_tree'
     # Instantiate the Class
     dp = DiseasePrediction(model_name=current_model_name)
     # Train the Model
